@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us |My PortFolio </title>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0b0d11;
+  --bg2: #0f1115;
+  --text: #ffffff;
+  --muted: #a1a1a1;
+
+  --primary: #3b82f6;
+  --secondary: #8b5cf6;
+}
+
+body.light {
+  --bg: #ffffff;
+  --bg2: #f4f6f8;
+  --text: #111111;
+  --muted: #555555;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--bg2);
+  color: var(--text);
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 5%;
+  background: var(--bg);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  display: flex;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.logo span {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.menu {
+  display: flex;
+  gap: 25px;
+}
+
+.menu a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: var(--primary);
+}
+
+.menu a.active {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: #fff;
+}
+
+.nav-right {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav-right i {
+  cursor: pointer;
+  color: var(--muted);
+  transition: 0.3s;
+}
+
+.nav-right i:hover {
+  color: var(--primary);
+}
+
+.nav-right a {
+  transition: 0.3s;
+}
+
+.nav-right a:hover {
+  color: var(--primary);
+}
+
+.divider {
+  width: 1px;
+  height: 22px;
+  background: #333;
+}
+
+.search-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+.about-hero {
+  padding: 80px 5%;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+}
+
+.about-hero h1 {
+  font-size: clamp(40px, 8vw, 56px);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.about-hero span {
+  color: var(--primary);
+}
+
+.about-hero p {
+  max-width: 700px;
+  margin: 20px auto 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  padding: 60px 5%;
+  align-items: center;
+  display: flex;
+}
+
+.about-section img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  transition: 0.4s ease;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+}
+
+
+
+.about-section img:hover {
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4);
+  transform: scale(1.02);
+}
+
+.about-text h2 {
+  margin-bottom: 20px;
+  font-size: clamp(28px, 5vw, 36px);
+  color: var(--text);
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.about-text p {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+@keyframes underlineSlide {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+section h2 {
+  margin-bottom: 20px;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  animation: underlineSlide 3s ease-in-out infinite;
+}
+.search-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  display: grid;
+  place-items: center;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.search-box {
+  position: fixed;
+  top: 80px;
+  right: 60px;
+  background: var(--bg);
+  padding: 12px;
+  border-radius: 10px;
+  display: none;
+  z-index: 1000;
+}
+
+.search-box input {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 40px 5%;
+  background: var(--bg);
+}
+
+.stat-box {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 15px;
+  background: rgba(59, 130, 246, 0.1);
+  transition: 0.3s ease;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.stat-box:hover {
+  transform: translateY(-5px);
+  background: rgba(59, 130, 246, 0.2);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+}
+
+.stat-box h3 {
+  font-size: 36px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.skills {
+  padding: 60px 5%;
+  background: var(--bg);
+}
+
+.skills h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: clamp(28px, 5vw, 40px);
+  border-bottom: 3px solid var(--primary);
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.skills-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.skill-item {
+  margin-bottom: 30px;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.skill-percentage {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(59, 130, 246, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 10px;
+  transition: width 0.8s ease;
+}
+
+.timeline {
+  padding: 60px 5%;
+}
+
+.timeline h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: clamp(28px, 5vw, 40px);
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.timeline-items {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline-item {
+  margin-bottom: 40px;
+  padding-left: 50px;
+  position: relative;
+}
+
+.timeline-dot {
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.timeline-content {
+  background: var(--bg);
+  padding: 20px 25px;
+  border-radius: 10px;
+  border-left: 3px solid var(--primary);
+  transition: 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateX(10px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+}
+
+.timeline-year {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.timeline-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 5px 0;
+  color: var(--text);
+}
+
+.timeline-description {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.cta-section {
+  padding: 60px 5%;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: clamp(28px, 5vw, 40px);
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  color: var(--muted);
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.cta-button {
+  display: block;
+  width: fit-content;
+  margin: 20px auto 0;
+  padding: 14px 35px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  border: 2px solid var(--primary);
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+.resume-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.resume-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+}
+
+.resume-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume-modal.active {
+  display: flex;
+}
+
+.resume-content {
+  background: var(--bg);
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 900px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.resume-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--primary);
+}
+
+.resume-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 28px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  color: var(--primary);
+}
+
+.download-btn {
+  padding: 10px 25px;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+.resume-section {
+  margin-bottom: 25px;
+}
+
+.resume-section h3 {
+  font-size: 18px;
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.resume-item {
+  margin-bottom: 15px;
+  padding: 12px;
+  background: rgba(59, 130, 246, 0.1);
+  border-left: 3px solid var(--primary);
+  border-radius: 5px;
+}
+
+.resume-item h4 {
+  color: var(--text);
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.resume-item p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 3px 0;
+}
+.team {
+  padding: 60px 5%;
+}
+
+.team h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: clamp(28px, 5vw, 40px);
+  border-bottom: 3px solid var(--primary);
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.member {
+  background: var(--bg);
+  padding: 30px 25px;
+  border-radius: 15px;
+  text-align: center;
+  transition: 0.3s ease;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.member:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.member img {
+  width: 120px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+}
+
+footer {
+  background: var(--bg);
+  padding: 30px 5%;
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid rgba(59, 130, 246, 0.2);
+}
+@media (max-width: 900px) {
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+  .about-section,
+  .team-grid,
+  .stats {
+    grid-template-columns: 1fr;
+  }
+  .about-hero {
+    padding: 50px 5%;
+  }
+  .about-section {
+    padding: 40px 5%;
+    gap: 30px;
+  }
+  .team {
+    padding: 40px 5%;
+  }
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 10px 5%;
+  }
+  .logo {
+    font-size: 16px;
+  }
+  .about-hero {
+    padding: 40px 5%;
+  }
+  .about-hero h1 {
+    font-size: 28px;
+  }
+  .about-section {
+    padding: 30px 5%;
+  }
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 30px 5%;
+  }
+  .stat-box {
+    padding: 20px 10px;
+  }
+  .team {
+    padding: 30px 5%;
+  }
+}
+
+@media (max-width: 400px) {
+    .about-section{
+        display: block;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">
+    <span>ADARSH GIRI</span>
+  </div>
+
+  <nav class="menu">
+    <a href="index.html">Home</a>
+    <a class="active">About</a>
+    <a href="project.html">Project</a>
+    <a href="contactus.html">Contact</a>
+  </nav>
+
+  <div class="nav-right">
+    <div class="divider"></div>
+    <a href="https://www.instagram.com/adarsh_pndit" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://github.com/AdarshGiri05" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://twitter.com/AdarshG27483508" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.linkedin.com/in/Adarsh Giri" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://www.facebook.com/Adarsh Giri" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <div class="divider"></div>
+    <i id="themeToggle" class="fa-regular fa-sun"></i>
+    <div class="search-btn">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+  </div>
+</header>
+
+<section class="about-hero">
+  <h1>About <span>Us</span></h1>
+  <p>
+    Hey! I'm Adarsh Giri, a passionate BCA student from Design Ecole's College Ajmer. I love transforming ideas into functional web applications using HTML, CSS, JavaScript, Java, and C++.
+
+What excites me most is solving real-world problems through code. I've worked on diverse projects including Augmented Reality, AI Agent Study Reminder, and Electricity Billing System - each teaching me something valuable about development and user experience.
+
+I believe in the power of continuous learning and am always exploring new technologies to enhance my skills and create better solutions.
+  </p>
+</section>
+
+<section class="about-section">
+  <img src="img19.jpeg">
+  <div class="about-text">
+    <h2>Who Am I</h2>
+    <p>
+     "I'm a BCA 2nd year student passionate about Web Development. 
+      I specialize in building responsive, user-friendly websites 
+     using HTML, CSS, JavaScript, Java, and C++. 
+
+I have created several projects including Augmented Reality, 
+AI Agent Study Reminder, and Electricity Billing System, 
+which showcase my practical knowledge and problem-solving skills.
+
+My goal is to become a skilled Full Stack Developer and create 
+impactful digital solutions. I'm currently pursuing my BCA from 
+Design Ecole's College Ajmer."
+    </p>
+    <div style="text-align: center; padding: 20px;">
+      <button class="resume-button" onclick="openResume()">📄 Download Resume</button>
+    </div>
+  </div>
+</section>
+
+
+<section class="timeline">
+  <h2>My Journey</h2>
+  <div class="timeline-items">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-year">2024</div>
+        <div class="timeline-title">Started BCA Program</div>
+        <div class="timeline-description">Began my journey in Bachelor of Computer Applications with passion for coding and technology.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-year">2025</div>
+        <div class="timeline-title">Web Development Discovery</div>
+        <div class="timeline-description">Discovered my passion for web development and started learning HTML, CSS, and JavaScript.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-year">2026</div>
+        <div class="timeline-title">Advanced Learning</div>
+        <div class="timeline-description">Expanding skills in backend technologies and working on more complex, real-world projects.</div>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Ready to Work Together?</h2>
+  
+  <a href="contactus.html" class="cta-button">Contact Me</a>
+</section>
+
+<div id="resumeModal" class="resume-modal">
+  <div class="resume-content">
+    <div class="resume-header">
+      <h2 class="resume-title">Resume - Adarsh Giri</h2>
+      <div>
+        <button class="download-btn" onclick="downloadResume()">⬇ Download PDF</button>
+        <button class="close-btn" onclick="closeResume()">&times;</button>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h3>👤 Personal Information</h3>
+      <div class="resume-item">
+        <h4>Adarsh Giri</h4>
+        <p>📧 Email: adarshgiri@email.com</p>
+        <p>📱 Phone: +91 7905826147</p>
+        <p>📍 Location: Azamgarh,(UP)</p>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h3>🎓 Education</h3>
+      <div class="resume-item">
+        <h4>Bachelor of Computer Applications (BCA) - 2nd Year</h4>
+        <p><b>Design Ecole's College Ajmer</b></p>
+        <p>Current Focus: Web Development & Full Stack Development</p>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h3>💻 Technical Skills</h3>
+      <div class="resume-item">
+        <h4>Web Technologies</h4>
+        <p>HTML5, CSS3, JavaScript, Responsive Web Design</p>
+      </div>
+      <div class="resume-item">
+        <h4>Programming Languages</h4>
+        <p>Java, C, C++, JavaScript</p>
+      </div>
+      <div class="resume-item">
+        <h4>Database & Other Tools</h4>
+        <p>SQL, Git, VS Code, </p>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h3>🔧 Projects</h3>
+      <div class="resume-item">
+        <h4>Augmented Reality (AR) Project</h4>
+        <p>Interactive experience blending digital content with physical world using modern technologies</p>
+      </div>
+      <div class="resume-item">
+        <h4>AI Agent - Study Reminder</h4>
+        <p>Smart study reminder application with AI-powered scheduling and notifications</p>
+      </div>
+      <div class="resume-item">
+        <h4>Electricity Billing System</h4>
+        <p>Complete billing system with database management and report generation</p>
+      </div>
+      <div class="resume-item">
+        <h4>Personal Portfolio Website</h4>
+        <p>Responsive portfolio website showcasing projects and skills with modern UI/UX</p>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h3>🎯 Interests & Expertise</h3>
+      <div class="resume-item">
+        <h4>Web Development</h4>
+        <p>Building responsive, user-friendly websites and applications using cutting-edge technologies</p>
+      </div>
+      <div class="resume-item">
+        <h4>Continuous Learning</h4>
+        <p>Passionate about learning new technologies and improving skills through real-world projects</p>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h3>🔗 Social Links</h3>
+      <div class="resume-item">
+        <p>GitHub: github.com/AdarshGiri05</p>
+        <p>LinkedIn: linkedin.com/in/Adarsh Giri</p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 My PortFolio
+</footer>
+<div id="searchBox" class="search-box">
+  <input type="text" id="searchInput" placeholder="Search here...">
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script>
+const toggle = document.getElementById("themeToggle");
+toggle.onclick = () => {
+  document.body.classList.toggle("light");
+  toggle.classList.toggle("fa-sun");
+  toggle.classList.toggle("fa-moon");
+};
+
+function openResume() {
+  const modal = document.getElementById("resumeModal");
+  modal.classList.add("active");
+}
+
+function closeResume() {
+  const modal = document.getElementById("resumeModal");
+  modal.classList.remove("active");
+}
+
+async function downloadResume() {
+  try {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({
+      orientation: 'portrait',
+      unit: 'mm',
+      format: 'a4'
+    });
+
+    const pageHeight = pdf.internal.pageSize.getHeight();
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    let yPosition = 15;
+    const margin = 12;
+    const maxWidth = pageWidth - (margin * 2);
+
+    const addText = (text, fontSize = 10, isBold = false, color = [0, 0, 0]) => {
+      pdf.setFontSize(fontSize);
+      pdf.setTextColor(color[0], color[1], color[2]);
+      pdf.setFont(undefined, isBold ? 'bold' : 'normal');
+      
+      const lines = pdf.splitTextToSize(String(text), maxWidth);
+      lines.forEach(line => {
+        if (yPosition > pageHeight - 10) {
+          pdf.addPage();
+          yPosition = 15;
+        }
+        pdf.text(line, margin, yPosition);
+        yPosition += 5;
+      });
+    };
+
+    const addSection = (title) => {
+      yPosition += 2;
+      addText(title, 12, true, [59, 130, 246]);
+      pdf.setDrawColor(59, 130, 246);
+      pdf.line(margin, yPosition + 1, pageWidth - margin, yPosition + 1);
+      yPosition += 7;
+    };
+
+    // Title
+    addText('ADARSH GIRI', 16, true, [59, 130, 246]);
+    addText('Full Stack Developer & Web Development Enthusiast', 10, false, [100, 100, 100]);
+    yPosition += 5;
+
+    // Contact Info
+    addText('Email: adarshgiriag2006@gmail.com | Phone: +91 7905826147| Location: Azamgarh,(UP)',9 );
+    yPosition += 5;
+
+    // Education
+    addSection('EDUCATION');
+    addText('Bachelor of Computer Applications (BCA)', 10, true);
+    addText('Design Ecole\'s College Ajmer (2nd Year)', 9);
+    addText('Focus: Web Development, Full Stack Development', 9, false, [80, 80, 80]);
+    yPosition += 2;
+
+    // Skills
+    addSection('TECHNICAL SKILLS');
+    addText('Languages: HTML, CSS, JavaScript, Java, C, C++', 9);
+    addText('Frameworks & Tools: Git, VS Code,  Responsive Design', 9);
+    addText('Database: SQL, Database Management', 9);
+    yPosition += 2;
+
+    // Projects
+    addSection('PROJECTS');
+    addText('Augmented Reality (AR) Project', 10, true);
+    addText('Interactive AR experience blending digital content with the physical world', 9, false, [80, 80, 80]);
+    yPosition += 2;
+
+    addText('AI Agent - Study Reminder', 10, true);
+    addText('Smart study reminder with AI-powered scheduling and notifications', 9, false, [80, 80, 80]);
+    yPosition += 2;
+
+    addText('Electricity Billing System', 10, true);
+    addText('Complete billing system with database and report generation', 9, false, [80, 80, 80]);
+    yPosition += 2;
+
+    addText('Personal Portfolio Website', 10, true);
+    addText('Responsive portfolio with modern UI/UX design', 9, false, [80, 80, 80]);
+    yPosition += 2;
+
+    // Expertise
+    addSection('EXPERTISE & INTERESTS');
+    addText('Web Development: Building responsive, user-friendly websites and applications', 9);
+    addText('Continuous Learning: Passionate about learning new technologies', 9);
+    addText('Problem Solving: Creative and analytical approach to development', 9);
+    yPosition += 2;
+
+    // Social Links
+    addSection('CONNECT');
+    addText('GitHub: github.com/AdarshGiri05 | LinkedIn: linkedin.com/in/adarshgiri', 9);
+
+    pdf.save('Adarsh_Giri_Resume.pdf');
+  } catch (error) {
+    console.error('Error:', error);
+    alert('PDF download error. Please try again.');
+  }
+}
+
+function printResume() {
+  const printWindow = window.open('', '', 'height=800,width=800');
+  const content = document.querySelector(".resume-content").innerHTML;
+  
+  printWindow.document.write(`
+
+  `);
+  
+  printWindow.document.close();
+  setTimeout(() => {
+    printWindow.print();
+  }, 300);
+}
+
+window.onclick = function(event) {
+  const modal = document.getElementById("resumeModal");
+  if (event.target === modal) {
+    modal.classList.remove("active");
+  }
+};
+
+const searchBtn = document.getElementById("searchBtn");
+const searchBox = document.getElementById("searchBox");
+
+if (searchBtn) {
+  searchBtn.addEventListener("click", () => {
+    searchBox.style.display =
+      searchBox.style.display === "block" ? "none" : "block";
+  });
+}
+
+const searchInput = document.getElementById("searchInput");
+if (searchInput) {
+  searchInput.addEventListener("keyup", function (e) {
+    if (e.key === "Enter") {
+      let value = this.value.toLowerCase().trim();
+
+      if (value === "about") {
+        window.location.href = "aboutus.html";
+      } 
+      else if (value === "project") {
+        window.location.href = "project.html";
+      }
+      else if (value === "contact") {
+        window.location.href = "contactus.html";
+      }
+      else {
+        alert("No page found!");
+      }
+    }
+  });
+}
+</script>
+
+</body>
+</html>
