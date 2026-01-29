@@ -667,6 +667,117 @@ footer {
         display: block;
     }
 }
+/* -------------------- Responsive CSS -------------------- */
+
+/* Tablet / Medium screens */
+@media (max-width: 1024px) {
+  .about-section {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding: 40px 5%;
+  }
+
+  .about-section img {
+    max-width: 300px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 30px 5%;
+    gap: 20px;
+  }
+
+  .timeline-items {
+    padding: 0 10px;
+  }
+
+  .timeline-item {
+    padding-left: 30px;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+/* Small Tablet / Large Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .about-hero h1 {
+    font-size: 32px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    padding-left: 20px;
+  }
+
+  .resume-content {
+    padding: 20px;
+  }
+
+  .cta-section h2 {
+    font-size: 28px;
+  }
+
+  .cta-button {
+    padding: 12px 25px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .about-hero h1 {
+    font-size: 24px;
+  }
+
+  .about-section img {
+    width: 80%;
+  }
+
+  .timeline-item {
+    padding-left: 15px;
+  }
+
+  .resume-content {
+    width: 95%;
+    max-height: 90vh;
+    padding: 15px;
+  }
+
+  .navbar {
+    padding: 8px 5%;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .nav-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 
 </style>
 </head>
@@ -739,7 +850,7 @@ Design Ecole's College Ajmer."
   <h2>My Journey</h2>
   <div class="timeline-items">
     <div class="timeline-item">
-      <div class="timeline-dot"></div>
+      
       <div class="timeline-content">
         <div class="timeline-year">2024</div>
         <div class="timeline-title">Started BCA Program</div>
@@ -747,7 +858,7 @@ Design Ecole's College Ajmer."
       </div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-dot"></div>
+      
       <div class="timeline-content">
         <div class="timeline-year">2025</div>
         <div class="timeline-title">Web Development Discovery</div>
@@ -755,7 +866,7 @@ Design Ecole's College Ajmer."
       </div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-dot"></div>
+      
       <div class="timeline-content">
         <div class="timeline-year">2026</div>
         <div class="timeline-title">Advanced Learning</div>
