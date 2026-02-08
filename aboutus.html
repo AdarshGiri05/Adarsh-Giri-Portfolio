@@ -667,9 +667,6 @@ footer {
         display: block;
     }
 }
-/* -------------------- Responsive CSS -------------------- */
-
-/* Tablet / Medium screens */
 @media (max-width: 1024px) {
   .about-section {
     display: flex;
@@ -704,7 +701,6 @@ footer {
   }
 }
 
-/* Small Tablet / Large Mobile */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -744,8 +740,6 @@ footer {
     padding: 12px 25px;
   }
 }
-
-/* Mobile */
 @media (max-width: 480px) {
   .about-hero h1 {
     font-size: 24px;
@@ -1037,30 +1031,27 @@ async function downloadResume() {
       yPosition += 7;
     };
 
-    // Title
+    
     addText('ADARSH GIRI', 16, true, [59, 130, 246]);
     addText('Full Stack Developer & Web Development Enthusiast', 10, false, [100, 100, 100]);
     yPosition += 5;
 
-    // Contact Info
     addText('Email: adarshgiriag2006@gmail.com | Phone: +91 7905826147| Location: Azamgarh,(UP)',9 );
     yPosition += 5;
 
-    // Education
     addSection('EDUCATION');
     addText('Bachelor of Computer Applications (BCA)', 10, true);
     addText('Design Ecole\'s College Ajmer (2nd Year)', 9);
     addText('Focus: Web Development, Full Stack Development', 9, false, [80, 80, 80]);
     yPosition += 2;
 
-    // Skills
     addSection('TECHNICAL SKILLS');
     addText('Languages: HTML, CSS, JavaScript, Java, C, C++', 9);
     addText('Frameworks & Tools: Git, VS Code,  Responsive Design', 9);
     addText('Database: SQL, Database Management', 9);
     yPosition += 2;
 
-    // Projects
+     Projects
     addSection('PROJECTS');
     addText('Augmented Reality (AR) Project', 10, true);
     addText('Interactive AR experience blending digital content with the physical world', 9, false, [80, 80, 80]);
@@ -1078,14 +1069,13 @@ async function downloadResume() {
     addText('Responsive portfolio with modern UI/UX design', 9, false, [80, 80, 80]);
     yPosition += 2;
 
-    // Expertise
     addSection('EXPERTISE & INTERESTS');
     addText('Web Development: Building responsive, user-friendly websites and applications', 9);
     addText('Continuous Learning: Passionate about learning new technologies', 9);
     addText('Problem Solving: Creative and analytical approach to development', 9);
     yPosition += 2;
 
-    // Social Links
+    
     addSection('CONNECT');
     addText('GitHub: github.com/AdarshGiri05 | LinkedIn: linkedin.com/in/adarshgiri', 9);
 
